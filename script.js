@@ -5,6 +5,10 @@ isbnEl = document.getElementById("isbn-el")
 submitBtn = document.getElementById("submit-btn")
 libraryList = document.getElementById("library-list")
 
+// let noOfBooks = 0 This indicates how many books are in the library
+let noOfBooks = 0 
+let storedBooks;
+
 // ES6 Book Class Constructor
 class Book {
     constructor(bookTitle, author, isbn, dateAdded) {
@@ -30,7 +34,6 @@ class CreateBook {
         if (event.target.className.includes('delete-book')) {
             event.target.parentElement.parentElement.remove()
         }
-
     }
 }
 
@@ -38,36 +41,40 @@ class CreateBook {
 class localStore {
     // Retrieve Stored Book Array from Local Storage
     static getBooks() {
-        let storedBooks;
-        if (localStorage.getItem(storedBooks) == null) {
+        if (localStorage.getItem('storedBooks') === null) {
             storedBooks = [];
+            console.log("New Array Created!")
         }
         else {
-            let storedBooks = JSON.parse(localStorage.getItem(storedBooks))
+            storedBooks = JSON.parse(localStorage.getItem('storedBooks'))
         }
         return storedBooks;
     }
 
     static showBooks() {
-
+        // Show available books in Local Storage
+        const storedBooks = localStore.getBooks()
+        storedBooks.forEach(function(book){
+            const createBook = new CreateBook
+            createBook.addBookToLibrary(book)
+        })
     }
     // Add Book to Book Array
-    static addBook(book) 
-        const storedBooks = localStore.getBooks()
+    static addBook(book) {
         
-        // For loop to push each book into localStorage
-        // for (let i=0; i=1; i++) {
-        //     console.log(i)
-        //     storedBooks.push(book)
-        //     // console.log(storedBooks)
-        // }
-        console.log(storedBooks)
-        let convert = JSON.stringify(storedBooks)
-        localStorage.setItem("storedBooks", convert)
+        let storedBooks = localStore.getBooks()
+        noOfBooks++
+        storedBooks.push(book)
+        localStorage.setItem('storedBooks', JSON.stringify(storedBooks))
     }
 
-    static removeBook() {
-
+    static deleteBook(event, target) {
+        // Delete the First Row from Library
+        let storedBooks = localStore.getBooks()
+            if (event.target.className.includes('delete-book')) {
+                storedBooks.shift()
+        }
+        localStorage.setItem('storedBooks', JSON.stringify(storedBooks))
     }
 }
 
@@ -77,6 +84,11 @@ function makeBook() {
     const book = new Book(bookTitleEl.value, authorEl.value, isbnEl.value)
     return book;
 }
+
+// Event Listener to load Local Storage data (Previous Books Stored) when page is loaded
+
+document.addEventListener("DOMContentLoaded", localStore.showBooks)
+
 
 // Event Listener for Adding Book to Library
 submitBtn.addEventListener("click", function(event) {
@@ -113,6 +125,7 @@ submitBtn.addEventListener("click", function(event) {
 libraryList.addEventListener("click", function(event, target) {
 
     createBook.deleteBook(event, target)
+    localStore.deleteBook(event, target)
 
     event.preventDefault() // Stop form from auto-firing
 })
