@@ -1,0 +1,24 @@
+/* General */
+
+
+/* Nav-Bar */
+
+.navbar-item {
+    border-style: solid;
+    border-color: #f8f9fa;
+    border-width: 0 0 3px 0;
+    transition: all 0.1s ease;
+}
+
+.navbar-item:hover {
+    background-color: rgb(242, 242, 242);
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 3px 0;
+}
+
+/* Main Body */
+
+.table .delete-book {
+    cursor: pointer;
+}
