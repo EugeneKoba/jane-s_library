@@ -27,26 +27,56 @@ class CreateBook {
     }
     // Function to Delete book from Library
     deleteBook(event, target) {
-        console.log("Function Ran successfully!")
-        if (event.target.className = 'delete-book') {
+        if (event.target.className.includes('delete-book')) {
             event.target.parentElement.parentElement.remove()
         }
+
     }
 }
 
-class localStorage {
+// LocalStorage Classes
+class localStore {
+    // Retrieve Stored Book Array from Local Storage
     static getBooks() {
-
+        let storedBooks;
+        if (localStorage.getItem(storedBooks) == null) {
+            storedBooks = [];
+        }
+        else {
+            let storedBooks = JSON.parse(localStorage.getItem(storedBooks))
+        }
+        return storedBooks;
     }
 
     static showBooks() {
 
     }
+    // Add Book to Book Array
+    static addBook(book) 
+        const storedBooks = localStore.getBooks()
+        
+        // For loop to push each book into localStorage
+        // for (let i=0; i=1; i++) {
+        //     console.log(i)
+        //     storedBooks.push(book)
+        //     // console.log(storedBooks)
+        // }
+        console.log(storedBooks)
+        let convert = JSON.stringify(storedBooks)
+        localStorage.setItem("storedBooks", convert)
+    }
 
+    static removeBook() {
+
+    }
 }
 
-// Initialise Instance by setting variable equal to Instance
+// Initialise Instances here
 const createBook = new CreateBook();
+function makeBook() {
+    const book = new Book(bookTitleEl.value, authorEl.value, isbnEl.value)
+    return book;
+}
 
 // Event Listener for Adding Book to Library
 submitBtn.addEventListener("click", function(event) {
@@ -64,9 +94,12 @@ submitBtn.addEventListener("click", function(event) {
     }
 
     // Create new book
-    const book = new Book(bookTitle, author, isbn, dateAdded)
+    let book = makeBook()
     // Run a prototype function to add Book to Library
     createBook.addBookToLibrary(book)
+
+    // Add book to LocalStorage
+    localStore.addBook(book)
     
     // clear the book input fields
     bookTitleEl.value = ""
@@ -79,7 +112,6 @@ submitBtn.addEventListener("click", function(event) {
 // Event Listener for Deleting Book from Library
 libraryList.addEventListener("click", function(event, target) {
 
-    console.log("Clicked!")
     createBook.deleteBook(event, target)
 
     event.preventDefault() // Stop form from auto-firing
