@@ -17,6 +17,10 @@
     border-width: 0 0 3px 0;
 }
 
+.search-icon {
+    display: flex;
+}
+
 /* Main Body */
 
 .table .delete-book {

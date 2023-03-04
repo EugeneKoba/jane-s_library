@@ -1,3 +1,5 @@
+// ---------------------------------------------------------------------------------------------
+// Library
 libraryForm = document.getElementById("library-form")
 bookTitleEl = document.getElementById("book-title-el")
 authorEl = document.getElementById("author-el")
@@ -132,3 +134,47 @@ libraryList.addEventListener("click", function(event, target) {
 
 
 
+
+
+
+// ---------------------------------------------------------------------------------------------
+// Search
+
+searchInput = document.querySelector(".search-input")
+searchBtn = document.querySelector(".search-btn")
+searchImgEl = document.querySelector(".search-img-el")
+searchTitleEl = document.querySelector(".search-title-el")
+searchAuthorEl = document.querySelector(".search-author-el")
+
+
+
+
+// Function to search for the Book Title
+class SearchBooks {
+    static searchTitle() {
+        console.log("function Ran!")
+        // Fetch the OpenBook API. the 'q=' refers to the search result
+        const newResponse = fetch(`https://openlibrary.org/search.json?q=${searchInput.value}`)
+        .then((result) => {
+            return result.json()
+        })
+        .then((response) => {
+            if (!Response.ok) {
+                console.log("Oh No! An Error Occured!")
+                console.log(response)
+            } else {
+                console.log("It Worked!!")
+            }
+            for(let i=0;i<2;i++) {
+                searchTitleEl.innerHTML = `Title Name: ${response.docs[i].title}`
+            }
+        }
+        // .catch(function(err) {
+        //     console.log(`${err}, Oops, that didn't quite work)`)
+        // })
+    )}
+}
+
+
+// Event Listener to listen for Search Button Click
+searchBtn.addEventListener("click", SearchBooks.searchTitle)
