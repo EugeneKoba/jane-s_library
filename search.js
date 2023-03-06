@@ -14,7 +14,7 @@
 // Taking in all inputs & buttons
 searchInput = document.querySelector(".search-input")
 searchBtn = document.querySelector(".search-btn")
-isbnEl = document.querySelector(".isbn-el")
+imgEl = document.querySelector(".img-el")
 titleEl = document.querySelector(".title-el")
 authorEl = document.querySelector(".author-el")
 let bookWorks;
@@ -27,7 +27,6 @@ async function getBooks() {
     // Fetch the OpenBook API. the 'q=' refers to the search result
     let response = await fetch(`https://openlibrary.org/search.json?q=${searchInput.value}`)
     response = await response.json()
-    console.log(response)
     return response;
 }
 
@@ -50,19 +49,19 @@ searchBtn.addEventListener("click", async function() {
     {
         titleEl.innerHTML = `Title: ${resultArray1.docs[0].title}`
         authorEl.innerHTML = `Author: ${resultArray1.docs[0].author_name}`
-        // Here, I'm getting the isbn of the book. to find it, I need to:
-        // 1a. find the Works of the book, which is located in the 'seed'.
-        let bookWorks = resultArray1.docs[0].seed[0]
-        console.log(bookWorks)
-        // 2. use the result, and execute a 2nd fetch, to get the isbn using the book works.
+        // Here, I'm getting the Image of the book. to find it, I need to:
+        // 1a. find the Works of the book, which is located in the 'key'.
+        let bookWorks = resultArray1.docs[0].key
+        // 2. use the Works, and execute a 2nd fetch, to find the cover ID of the book, within the Works.
         return fetch(`https://openlibrary.org${bookWorks}.json`)
         .then(function(response2) {
             return response2.json()
         })
         .then(function(response2) {
-            console.log(response2)
-            isbnEl.innerHTML = `
-            ISBN: ${response2.isbn_13}`
+            // This is where the cover ID is located in the Works Object/File.
+            let coverID = response2.covers[0]
+            // This is the format if the image Cover Links, in OpenLibrary:
+            imgEl.innerHTML = `<img src="https://covers.openlibrary.org/b/id/${response2.covers[0]}-M.jpg">`
         })
     }
 })
