@@ -17,10 +17,13 @@
     border-width: 0 0 3px 0;
 }
 
-.search-icon {
-    display: flex;
+/* Navbar Elements take 100% of screen when screen size is smaller than 992px (lg) */
+@media only screen and (max-width: 992px) {
+    .navbar-nav {
+        width: 100%;
+        align-items: center;
+    }
 }
-
 /* Main Body */
 
 .table .delete-book {
