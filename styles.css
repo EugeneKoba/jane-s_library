@@ -1,7 +1,7 @@
 /* General */
 
-
 /* Nav-Bar */
+
 
 .navbar-item {
     border-style: solid;
@@ -25,6 +25,10 @@
     }
 }
 /* Main Body */
+
+.home-el {
+    background-color: #fffbae;
+}
 
 .table .delete-book {
     cursor: pointer;
