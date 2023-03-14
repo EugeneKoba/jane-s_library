@@ -20,8 +20,12 @@ submitBtn = document.getElementById("submit-btn")
 libraryList = document.getElementById("library-list")
 
 // let noOfBooks = 0 This indicates how many books are in the library
-let noOfBooks = 0 
-let storedBooks;
+let isBookInvalid = false,
+    isAuthorInvalid = false,
+    isIsbnInvalid = false,
+    noOfBooks = 0,
+    storedBooks,
+    regExp;
 
 // ES6 Book Class Constructor
 class Book {
@@ -49,8 +53,55 @@ class CreateBook {
             event.target.parentElement.parentElement.remove()
         }
     }
-}
 
+     // Function to check if Author Name is valid
+     static validateBook() {
+        // Function used to check if Name is valid 
+        if (bookTitleEl.value === '') {
+            CreateBook.showAlert("Book Name")
+            bookTitleEl.value = ""
+            isBookInvalid = true
+            return;
+        } else {
+            isBookInvalid = false
+        }
+    }
+ 
+    // Function to check if Author Name is valid
+    static validateAuthor() {
+        // Regular Expressions used to check if Name is 2-50 normal letters long, incl. spacebar. 
+        let regExp = /^[a-zA-Z ]{2,50}$/
+        if (!regExp.test(authorEl.value) || authorEl.value == '') {
+            CreateBook.showAlert("Author Name")
+            authorEl.value = ""
+            isAuthorInvalid = true
+            return;
+        } else {
+            isAuthorInvalid = false
+        }
+        regExp = ""; // Reset RegExp variable
+    }
+
+    // Function to check if ISBN is valid
+    static validateIsbn() {
+        // Regular Expressions used to ensure no invalid characters are entered. American Library Standard states that Every ISBN must be 13 digits long, with 4 hyphens.
+        let regExp = /^[0-9 -]{17}/
+        if (!regExp.test(isbnEl.value) || isbnEl.value == '') {
+            CreateBook.showAlert("ISBN")
+            isbnEl.value = ""
+            isIsbnInvalid = true
+            return;
+        } else {
+            isIsbnInvalid = false
+        }
+        regExp = ""; // Reset RegExp variable
+    }
+
+    static showAlert(incorrect) {
+        alert(`Error: Please enter a valid ${incorrect}.`)
+        return;
+    }
+}
 // LocalStorage Classes
 class localStore {
     // Retrieve Stored Book Array from Local Storage
@@ -75,7 +126,6 @@ class localStore {
     }
     // Add Book to Book Array
     static addBook(book) {
-        
         let storedBooks = localStore.getBooks()
         noOfBooks++
         storedBooks.push(book)
@@ -99,26 +149,26 @@ function makeBook() {
     return book;
 }
 
+// EVENT LISTENERS
+
 // Event Listener to load Local Storage data (Previous Books Stored) when page is loaded
-
 document.addEventListener("DOMContentLoaded", localStore.showBooks)
-
 
 // Event Listener for Adding Book to Library
 submitBtn.addEventListener("click", function(event) {
-    
+    // Run functions to check if Book Title, Author Name & ISBN is valid
+    CreateBook.validateBook()
+    CreateBook.validateAuthor()
+    CreateBook.validateIsbn()
+    // Stop book from being added if values are invalid
+    if (isBookInvalid == true || isAuthorInvalid == true || isIsbnInvalid == true) {
+        return;
+    } 
     // Store book values into variables
     let bookTitle = bookTitleEl.value
     let author = authorEl.value
     let isbn = isbnEl.value
     let dateAdded = ''
-
-    // Validate/Check if user inputs are valid
-    if (bookTitle == "" || author == "" || isbn == "") {
-        alert("Please enter a valid Book Title, Author Name & ISBN.")
-        return;
-    }
-
     // Create new book
     let book = makeBook()
     // Run a prototype function to add Book to Library
@@ -137,10 +187,8 @@ submitBtn.addEventListener("click", function(event) {
 
 // Event Listener for Deleting Book from Library
 libraryList.addEventListener("click", function(event, target) {
-
     createBook.deleteBook(event, target)
     localStore.deleteBook(event, target)
-
     event.preventDefault() // Stop form from auto-firing
 })
 
