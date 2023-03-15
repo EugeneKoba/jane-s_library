@@ -165,10 +165,10 @@ submitBtn.addEventListener("click", function(event) {
         return;
     } 
     // Store book values into variables
-    let bookTitle = bookTitleEl.value
-    let author = authorEl.value
-    let isbn = isbnEl.value
-    let dateAdded = ''
+    let bookTitle = bookTitleEl.value,
+        author = authorEl.value,
+        isbn = isbnEl.value,
+        dateAdded = ''
     // Create new book
     let book = makeBook()
     // Run a prototype function to add Book to Library
