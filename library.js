@@ -37,7 +37,7 @@ class Book {
     }
 }
 
-// Function Classes
+// Classes
 class CreateBook {
     // Create a Table Row
     addBookToLibrary(book) {
@@ -87,7 +87,7 @@ class CreateBook {
         // Regular Expressions used to ensure no invalid characters are entered. American Library Standard states that Every ISBN must be 13 digits long, with 4 hyphens.
         let regExp = /^[0-9 -]{17}/
         if (!regExp.test(isbnEl.value) || isbnEl.value == '') {
-            CreateBook.showAlert("ISBN")
+            CreateBook.showAlert("ISBN (in the Following Format: xxx-x-xx-xxxxxx-x)")
             isbnEl.value = ""
             isIsbnInvalid = true
             return;
@@ -102,7 +102,7 @@ class CreateBook {
         return;
     }
 }
-// LocalStorage Classes
+
 class localStore {
     // Retrieve Stored Book Array from Local Storage
     static getBooks() {
@@ -119,7 +119,7 @@ class localStore {
     static showBooks() {
         // Show available books in Local Storage
         const storedBooks = localStore.getBooks()
-        storedBooks.forEach(function(book){
+        storedBooks.forEach(book => {
             const createBook = new CreateBook
             createBook.addBookToLibrary(book)
         })
@@ -155,7 +155,7 @@ function makeBook() {
 document.addEventListener("DOMContentLoaded", localStore.showBooks)
 
 // Event Listener for Adding Book to Library
-submitBtn.addEventListener("click", function(event) {
+submitBtn.addEventListener("click", event => {
     // Run functions to check if Book Title, Author Name & ISBN is valid
     CreateBook.validateBook()
     CreateBook.validateAuthor()
@@ -186,7 +186,7 @@ submitBtn.addEventListener("click", function(event) {
 })
 
 // Event Listener for Deleting Book from Library
-libraryList.addEventListener("click", function(event, target) {
+libraryList.addEventListener("click", (event, target) => {
     createBook.deleteBook(event, target)
     localStore.deleteBook(event, target)
     event.preventDefault() // Stop form from auto-firing
