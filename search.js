@@ -57,7 +57,7 @@ class BookTile {
 
 
 // Event Listener to listen for Search Button Click
-searchBtn.addEventListener("click", async => {
+searchBtn.addEventListener("click", async function() {
     // Initially creating an empty array
     let result = []
     // Setting the input value equal to a variable
@@ -70,15 +70,26 @@ searchBtn.addEventListener("click", async => {
         catch (error) {
             console.log("Error!")
             console.log(error)
+            alert("ERROR: Book cannot be found. Please try again.")
         }
         // Store the Book Content valiues in variables
-        {   
+        try {   
             let title = result.docs[0].title
             let author = result.docs[0].author_name
             let publish = result.docs[0].publish_year[0]
-            // Here, I'm getting the Image of the book. to find it, I need to fetch twice:
-            // 1. fetch the Works of the book, which is located in the 'key'.
+            // Error Checks
+            if (title == 'undefined' || author == 'undefined') {
+                alert("ERROR: Book cannot be found. Please try again.")
+                return;
+            }
+            // Here, I'm getting the Image of the book. to find it, I need to:
+            // 1a. find the Works of the book, which is located in the 'key'.
             let bookWorks = result.docs[0].key
+            // Error Checks
+            if (!bookWorks) {
+                alert("ERROR: Book cannot be found. Please try again.")
+                return;
+            }
             // 2. use the Works, and execute a 2nd fetch, to find the cover ID of the book, withinthe Works.
             return fetch(`https://openlibrary.org${bookWorks}.json`)
             .then((response2) => {
@@ -88,12 +99,27 @@ searchBtn.addEventListener("click", async => {
                 
                 // This is where the cover ID is located in the Works Object/File.
                 let coverID = response2.covers[0]
+                                // Error Checks
+                if (!bookWorks) {
+                    alert("ERROR: Book cannot be found. Please try again.")
+                    return;
+                }
                 // This is the format if the image Cover Links, in OpenLibrary:
                 let img = `<img src="https://covers.openlibrary.org/b/id/${response2.covers[0]}-M.jpg">`
                 let versions = response2.revision
                 //  Run a function that Creates HTML Elements for each result
                 BookTile.showDetails(title, author, publish, img, versions)
             })
+            .catch((error) => {
+                console.log(error)
+                alert("ERROR: Book cannot be found. Please try again.")
+                return;
+            })
+        }
+        catch(error) {
+            console.log(error)
+            alert("ERROR: Book cannot be found; Please try again.")
+            return;
         }
 })
 
