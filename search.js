@@ -37,7 +37,6 @@ class BookTile {
 
     // Create variable for Book Tile
     static showDetails(title, author, publish, img, versions) {
-        
         bookDetails = (`
         <div class="col-lg-4 ms-auto me-auto">
             <div class="d-flex">
@@ -58,7 +57,7 @@ class BookTile {
 
 
 // Event Listener to listen for Search Button Click
-searchBtn.addEventListener("click", async function() {
+searchBtn.addEventListener("click", async => {
     // Initially creating an empty array
     let result = []
     // Setting the input value equal to a variable
@@ -77,8 +76,8 @@ searchBtn.addEventListener("click", async function() {
             let title = result.docs[0].title
             let author = result.docs[0].author_name
             let publish = result.docs[0].publish_year[0]
-            // Here, I'm getting the Image of the book. to find it, I need to:
-            // 1a. find the Works of the book, which is located in the 'key'.
+            // Here, I'm getting the Image of the book. to find it, I need to fetch twice:
+            // 1. fetch the Works of the book, which is located in the 'key'.
             let bookWorks = result.docs[0].key
             // 2. use the Works, and execute a 2nd fetch, to find the cover ID of the book, withinthe Works.
             return fetch(`https://openlibrary.org${bookWorks}.json`)
