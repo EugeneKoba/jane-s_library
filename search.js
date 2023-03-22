@@ -110,12 +110,14 @@ searchBtn.addEventListener("click", async function() {
                 //  Run a function that Creates HTML Elements for each result
                 BookTile.showDetails(title, author, publish, img, versions)
             })
+            // Error Checks
             .catch((error) => {
                 console.log(error)
                 alert("ERROR: Book cannot be found. Please try again.")
                 return;
             })
         }
+        // Error Checks
         catch(error) {
             console.log(error)
             alert("ERROR: Book cannot be found; Please try again.")
@@ -123,7 +125,4 @@ searchBtn.addEventListener("click", async function() {
         }
 })
 
-
- 
-// Function to create a new tile when function is searched
 

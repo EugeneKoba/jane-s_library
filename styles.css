@@ -1,7 +1,14 @@
 /* General */
 
-/* Nav-Bar */
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
 
+h1 {
+    font-weight: 600 !important;
+}
+
+/* Nav-Bar */
 
 .navbar-item {
     border-style: solid;
@@ -32,4 +39,19 @@
 
 .table .delete-book {
     cursor: pointer;
+}
+
+
+/* Blog Posts */
+
+.blog-posts img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Footer */
+
+.social-media li{
+    list-style: none; 
 }
