@@ -4,13 +4,24 @@ body {
     font-family: 'Montserrat', sans-serif !important;
 }
 
+.home-el, .blog-el {
+    background-color: #e7e6dc;
+}
+
 h1 {
     font-weight: 600 !important;
 }
 
 /* Nav-Bar */
 
+.navbar-brand img {
+    width: 270px;
+    height: 50px;
+    object-fit: cover;
+}
+
 .navbar-item {
+    font-weight: 500;
     border-style: solid;
     border-color: #f8f9fa;
     border-width: 0 0 3px 0;
@@ -18,10 +29,15 @@ h1 {
 }
 
 .navbar-item:hover {
+    font-weight: 700;
     background-color: rgb(242, 242, 242);
     border-style: solid;
     border-color: black;
     border-width: 0 0 3px 0;
+}
+
+.navbar-item .active {
+    font-weight: 600
 }
 
 /* Navbar Elements take 100% of screen when screen size is smaller than 992px (lg) */
@@ -32,10 +48,6 @@ h1 {
     }
 }
 /* Main Body */
-
-.home-el {
-    background-color: #fffbae;
-}
 
 .table .delete-book {
     cursor: pointer;

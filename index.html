@@ -11,25 +11,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Home - Jane's Library</title>
+    <link rel="icon" href="images/logo/Jane's Library Logo transparent pink-12.png">
 </head>
 <body>
     <!-- Navbar Section -->
     <section class="navbar-el">
-        <div class="top-bar bg-light">
-            <div class="top-header py-4">
-                <div class="container">
-                    <img src="images/logo_placeholder.png" alt="Logo" class="primary-logo img-fluid mx-auto d-block" width="120" height="120">
-                </div>
-            </div>
-        </div>
-        <nav class="navbar sticky-top navbar-expand-lg navbar-default pb-0 bg-light bg-gradient">
+        <nav class="navbar pb-0 navbar-expand-lg bg-light bg-gradient">
             <div class="container">
-                <ul class="navbar-nav">
+                <a class = navbar-brand href="index.html">
+                    <img src="images/logo/Jane's Library Logo transparent-05.png" alt="">
+                </a>
+                <ul class="nav navbar-nav ms-auto">
                     <li class="navbar-item ps-1 pe-2">
                         <a href="index.html" class="nav-link active">Home</a> <!-- Main Homepage  -->
                     </li>
                     <li class="navbar-item ps-1 pe-2">
-                        <a href="about.html" class="nav-link">About</a> <!-- About Page  -->
+                        <a href="#about-el" class="nav-link">About</a> <!-- About Page  -->
                     </li>
                     <li class="navbar-item ps-1 pe-2">
                         <a href="blog.html" class="nav-link">Blog</a> <!-- Top Picks Blog Page -->
@@ -40,9 +37,7 @@
                     <li class="navbar-item ps-1 pe-2">
                         <a href="contact.html" class="nav-link">Contact</a> <!-- Contact Info Page  -->
                     </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="navbar-item search-item">
+                    <li class="navbar-item ps-1 pe-2 search-item">
                         <a href="search.html">
                             <i class="bi bi-search nav-link" href=""></i><!-- Search Page -->
                         </a> 
@@ -61,64 +56,97 @@
                 </div>
                 <div class="col-lg-6 p-3 mt-auto mb-auto">
                     <h1 class="home-title mb-4">Home.</h1>
-                    <p>Hi, my name is Jane, and I am a Poet who is passionate about ll things to do with books! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque voluptate dolores quasi quae minus modi aspernatur at expedita neque nihil?</p>
+                    <p>Hi, my name is Jane, and I am a Poet who is passionate about things that have to do with books! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque voluptate dolores quasi quae minus modi aspernatur at expedita neque nihil?</p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, qui. Inventore repellat quibusdam architecto vel. </p>
-                    <button class="btn btn-lg btn-dark mt-3">My Blog</button>
+                    <a href="blog.html" class="btn btn-lg btn-dark mt-4">My Blog</a>
                 </div>
                 
             </div>
         </div>
     </section>
     <section>
-        <!-- About Me -->
+    <!-- About Me -->
+    <section class="about-el" id="about-el">
         <div class="container">
             <div class="row">
                 <div class="col-md-7 p-3 mt-auto mb-auto">
                     <h1 class="mb-4">About Me!</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi atque doloribus ipsam ullam voluptatum vel consectetur reprehenderit eligendi dicta doloremque, voluptas odio, rerum porro veniam beatae fugit enim hic. Eaque voluptatum ex quod sit in reprehenderit dolores facere deserunt eveniet possimus. Earum quae amet deleniti consequuntur quaerat iste. Et, vel!</p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam facilis ratione nisi, in odio beatae.</p>
-                    <button class="btn btn-lg btn-dark">More</button>
+                    <a href="#blog-el" class="btn btn-lg btn-dark">More</a>
                 </div>
-                <div class="col-lg-5 mt-5 mb-5">
+                <div class="col-lg-5 p3 mt-5 mb-5">
                     <img src="images/self-portrait2.jpeg" alt="Logo" class="primary-logo img-fluid">
                 </div>
             </div>
         </div>
-        <!-- Blog Posts -->
-        <div class="container blog-posts">
+    </section>
+    <!-- Blog Posts -->
+    <section class="blog-el" id="blog-el">
+        <div class="container pt-5 pb-5 blog-posts">
             <div class="row">
                 <div class="col-md-12 ms-auto me-auto">
-                    <h1>Blog Posts</h1>
+                    <h1 class="mb-4">Blog Posts</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 pb-5">
                     <div class="card">
                         <img src="images/books_1.jpeg" class="card-img-top" alt="Blog_Post">
                             <div class="card-body">
                                 <h5 class="card-title">The Current State Of Literature</h5>
                                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta blanditiis nisi unde reprehenderit exercitationem fuga..</p>
-                                <a href="#" class="btn btn-dark">Read More</a>
+                                <a href="blog.html" class="btn btn-dark">Read More</a>
                             </div>
                         </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 pb-5">
                     <div class="card">
                         <img src="images/books_2.jpeg" class="card-img-top" alt="Blog_Post">
                             <div class="card-body">
                                 <h5 class="card-title">Racism in Poetry</h5>
                                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta blanditiis nisi unde reprehenderit exercitationem fuga..</p>
-                                <a href="#" class="btn btn-dark">Read More</a>
+                                <a href="blog.html" class="btn btn-dark">Read More</a>
                             </div>
                         </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 pb-5">
                     <div class="card">
                         <img src="images/books_3.jpeg" class="card-img-top" alt="Blog_Post">
                             <div class="card-body">
                                 <h5 class="card-title">Moral Compass - It's Not Easy?</h5>
                                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta blanditiis nisi unde reprehenderit exercitationem fuga..</p>
-                                <a href="#" class="btn btn-dark">Read More</a>
+                                <a href="blog.html" class="btn btn-dark">Read More</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-4 pb-5">
+                    <div class="card">
+                        <img src="images/books_4.jpeg" class="card-img-top" alt="Blog_Post">
+                            <div class="card-body">
+                                <h5 class="card-title">March 2023: My Top Picks</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta blanditiis nisi unde reprehenderit exercitationem fuga..</p>
+                                <a href="blog.html" class="btn btn-dark">Read More</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-4 pb-5">
+                    <div class="card">
+                        <img src="images/books_5.jpeg" class="card-img-top" alt="Blog_Post">
+                            <div class="card-body">
+                                <h5 class="card-title">The Rise of eBooks: Evil or Essential?</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta blanditiis nisi unde reprehenderit exercitationem fuga..</p>
+                                <a href="blog.html" class="btn btn-dark">Read More</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-4 pb-5">
+                    <div class="card">
+                        <img src="images/books_6.jpeg" class="card-img-top" alt="Blog_Post">
+                            <div class="card-body">
+                                <h5 class="card-title">Books In The Time Of Coronavirus</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta blanditiis nisi unde reprehenderit exercitationem fuga..</p>
+                                <a href="blog.html" class="btn btn-dark">Read More</a>
                             </div>
                         </div>
                 </div>
@@ -127,9 +155,9 @@
     </section>
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 justify-content-start text-muted">@ Jane's Library™</p>
+            <p class="col-md-4 justify-content-start text-muted">@ Jane's Library ™</p>
             <a href="#" class="col-md-4 d-flex justify-content-center align-items-center mb-3 mb-md-0 me-mb-0 text-decoration-none">
-                <img src="images/logo_placeholder.png" alt="" width="60" height="60">
+                <img src="images/logo/Jane's Library Logo transparent-13.png" alt="" width="60" height="60">
             </a>
             <ul class="col-md-4 justify-content-end align-items-center d-flex social-media">
                 <li class="ms-2">
