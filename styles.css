@@ -102,16 +102,33 @@ h1 {
     width: 100%;
 }
 
+.blog .blog-content .blog-title {
+    font-weight: 600;
+    font-size: 36px;
+}
+
+.blog .blog-content .article-bottom i{
+    font-size: 20px;
+}
+
+.blog .blog-content .share {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.blog .blog-content .share:hover {
+    color: #f1a5d2;
+}
+
 /* Footer */
 
 footer .social-media li{
     list-style: none; 
 }
 
-footer .social-media li img {
-    transition: all 0.3s ease;
+footer .social-media li i {
+    font-size: 40px;
 }
 
-footer .social-media li img:hover {
-    color: red;
-}
