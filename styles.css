@@ -55,12 +55,7 @@ h1 {
         align-items: center;
     }
 }
-/* Main Body */
-
-.table .delete-book {
-    cursor: pointer;
-}
-
+/* *********   Home Page   ********* */
 
 /* Blog Posts */
 
@@ -81,8 +76,42 @@ h1 {
     transform: scale(1.05);
 }
 
+/* *********   Blog Page   ********* */
+
+.blog .grey-shape { 
+    width: 100vw;
+    height: 450px;
+    background-color: #e7e6dc;
+}
+
+.blog .blog-content .back-home {
+    color: black;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.blog .blog-content .back-home:hover {
+    color: #f1a5d2;
+}
+
+.blog .blog-content .blog-img {
+    max-height: 500px;
+}
+
+.blog .blog-content .blog-img img {
+    width: 100%;
+}
+
 /* Footer */
 
-.social-media li{
+footer .social-media li{
     list-style: none; 
+}
+
+footer .social-media li img {
+    transition: all 0.3s ease;
+}
+
+footer .social-media li img:hover {
+    color: red;
 }
