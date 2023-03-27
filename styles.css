@@ -12,6 +12,14 @@ h1 {
     font-weight: 600 !important;
 }
 
+.button-el {
+    transition: all ease-in-out;
+}
+
+.button-el:hover {
+    transform: scale(1.1);
+}
+
 /* Nav-Bar */
 
 .navbar-brand img {
@@ -56,10 +64,21 @@ h1 {
 
 /* Blog Posts */
 
-.blog-posts img {
+.blog-posts .card-img {
+    height: 250px;
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+}
+
+.blog-posts .card-img img {
     height: 250px;
     width: 100%;
     object-fit: cover;
+    transition: all 0.2s ease-in-out;
+}
+
+.blog-posts img:hover {
+    transform: scale(1.05);
 }
 
 /* Footer */
