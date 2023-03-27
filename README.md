@@ -2,8 +2,7 @@
 
 Full Website Project for Jane's Library Instagram page, containing the following:
 
-- Home Page
-- About Page
+- Home / About Page
 - Blog Page
 - Online Library Book Storage Page
 - Contact Us Page
