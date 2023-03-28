@@ -2,7 +2,8 @@
 
 Full Website Project for Jane's Library Instagram page, containing the following:
 
-- Home / About Page
+- Home Page
+- About Page
 - Blog Page
 - Online Library Book Storage Page
 - Contact Us Page
@@ -10,4 +11,4 @@ Full Website Project for Jane's Library Instagram page, containing the following
 
 plus more. Made with HTML, Bootstrap (CSS) & Vanilla Javascript.
 
-<img width="1680" alt="Screenshot 2023-03-27 at 22 08 08" src="https://user-images.githubusercontent.com/120111293/228067024-c2645c5d-1156-49c2-ac26-12abe1bdf958.png">
+<img width="1680" alt="Screenshot 2023-02-28 at 19 33 59" src="https://user-images.githubusercontent.com/120111293/221959764-0dba8660-b6ab-4fe4-ba5e-7f67aab4c8cd.png">
