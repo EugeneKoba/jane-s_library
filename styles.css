@@ -95,7 +95,7 @@ h1 {
 .blog-posts img:hover {
     transform: scale(1.05);
 }
-/* *********   Genres   ********* */
+/*  Genres  */
 
 .genres-el h4 {
     color: #e558ac;
@@ -159,6 +159,28 @@ h1 {
 
 .blog .blog-content .share:hover {
     color: #f1a5d2;
+}
+
+/* *********   Library Page   ********* */
+
+.library-el {
+    min-height: 100vh;
+}
+
+/* *********   Contact Page   ********* */
+
+.contact-el {
+    min-height: 72vh;
+}
+
+.contact-el .card {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+}
+
+/* *********   Search Page   ********* */
+
+.search-el {
+    min-height: 100vh;
 }
 
 /* Footer */
