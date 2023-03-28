@@ -67,7 +67,17 @@ h1 {
 }
 /* *********   Home Page   ********* */
 
+/* Home */
+
+.image {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
+}
+
 /* Blog Posts */
+
+.blog-posts .card {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
+}
 
 .blog-posts .card-img {
     height: 250px;
@@ -108,7 +118,7 @@ h1 {
 
 .blog .grey-shape { 
     width: 100vw;
-    height: 450px;
+    height: 650px;
     background-color: #e7e6dc;
 }
 
@@ -128,6 +138,7 @@ h1 {
 
 .blog .blog-content .blog-img img {
     width: 100%;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
 }
 
 .blog .blog-content .blog-title {
