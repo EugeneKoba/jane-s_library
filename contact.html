@@ -50,10 +50,11 @@
     <section class="contact-el">
         <div class="container">
             <div class="row">
+                <!-- Email -->
                 <div class="col-md-6 text-center">
-                    <div class="card bg-light mt-5 mb-5">
+                    <div class="card bg-light mt-5 mb-3">
                         <div class="card-body">
-                            <h4 class="card-subtitle mt-4">Email</h5>
+                            <h4 class="card-subtitle mt-4">Email</h4>
                             <div class="icon mt-5 mb-5 d-grid justify-content-center align-items-center">
                                 <div class="icon-inner d-grid justify-content-center align-items-center">
                                     <img src="images/email.png" alt="email" height="100px" width="100px">
@@ -61,24 +62,49 @@
                             </div>
                             <p class="card-text mb-4">If you have an urgent enquiry or message, please email me at:</p>
                             <address>
-                                <a href="#">janeslibrary@gmail.co.uk</a>.
+                                <a href="mailto:janeslibrary@gmail.co.uk">janeslibrary@gmail.co.uk</a>.
                             </address>
                         </div>
                     </div>
                 </div>
+                <!-- Phone -->
                 <div class="col-md-6 text-center">
-                    <div class="card bg-light mt-5 mb-5">
+                    <div class="card bg-light mt-5 mb-3">
                         <div class="card-body">
-                            <h4 class="card-subtitle mt-4">Phone</h5>
+                            <h4 class="card-subtitle mt-4">Phone</h4>
                             <div class="icon mt-5 mb-5 d-grid justify-content-center align-items-center">
                                 <div class="icon-inner d-grid justify-content-center align-items-center">
                                     <img src="images/phone.png" alt="phone" height="100px" width="100px">
                                 </div>
                             </div>
                             <p class="card-text mb-4">Available Hours: Monday - Saturday, 9pm-6pm</p>
-                            <address>
-                                <a href="#">janeslibrary@gmail.co.uk</a>.
-                            </address>
+                            <p class="mb-3">Tel No: <a href="#">07456-765-323</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Message Form -->
+            <div class="row">
+                <div class="col-md-9 ms-auto me-auto">
+                    <div class="card bg-light mb-5">
+                        <div class="card-body" id="form-el">
+                            <h4 class="card-subtitle mt-4">Feedback Form</h4>
+                            <p class="mt-3">Fill in the form below if you want to send feedback about your experience using this website!</p>
+                            <div class="mb-3">
+                                <label for="first-name" class="form-label">First Name:</label>
+                                <input type="text" class="form-control" id="first-name" placeholder="First Name...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="last-name" class="form-label">Last Name:</label>
+                                <input type="text" class="form-control" id="last-name" placeholder="Last Name...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message:</label>
+                                <textarea class="form-control" rows="3" id="message-el"></textarea>
+                            </div>
+                            <div class="d-grid justify-content-end" id="btn-location">
+                                <button type="submit" class="btn btn-dark" id="submit-btn">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
