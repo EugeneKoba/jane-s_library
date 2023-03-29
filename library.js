@@ -70,7 +70,7 @@ class CreateBook {
     // Function to check if Author Name is valid
     static validateAuthor() {
         // Regular Expressions used to check if Name is 2-50 normal letters long, incl. spacebar. 
-        let regExp = /^[a-zA-Z ]{2,50}$/
+        let regExp = /^[a-zA-Z .-]{2,50}$/
         if (!regExp.test(authorEl.value) || authorEl.value == '') {
             CreateBook.showAlert("Author Name")
             authorEl.value = ""
@@ -84,8 +84,8 @@ class CreateBook {
 
     // Function to check if ISBN is valid
     static validateIsbn() {
-        // Regular Expressions used to ensure no invalid characters are entered. American Library Standard states that Every ISBN must be 13 digits long, with 4 hyphens.
-        let regExp = /^[0-9 -]{17}/
+        // Regular Expressions used to ensure no invalid characters are entered. American Library Standard states that Every ISBN can either be 10 or 13 digits long, with  max. 4 hyphens.
+        let regExp = /^[0-9 -]{10,17}/
         if (!regExp.test(isbnEl.value) || isbnEl.value == '') {
             CreateBook.showAlert("ISBN (in the Following Format: xxx-x-xx-xxxxxx-x)")
             isbnEl.value = ""
@@ -108,7 +108,6 @@ class localStore {
     static getBooks() {
         if (localStorage.getItem('storedBooks') === null) {
             storedBooks = [];
-            console.log("New Array Created!")
         }
         else {
             storedBooks = JSON.parse(localStorage.getItem('storedBooks'))

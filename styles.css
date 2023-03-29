@@ -60,6 +60,12 @@ h1 {
 
 /* Navbar Elements take 100% of screen when screen size is smaller than 992px (lg) */
 @media only screen and (max-width: 992px) {
+    
+    .navbar-brand {
+        width: 100%;
+        text-align: center;
+    }
+
     .navbar-nav {
         width: 100%;
         align-items: center;
@@ -181,6 +187,10 @@ h1 {
 
 .search-el {
     min-height: 100vh;
+}
+
+#book-results .img-el img {
+    min-height: 300px;
 }
 
 /* Footer */

@@ -20,6 +20,7 @@ const searchInput = document.querySelector(".search-input"),
     publishEl = document.querySelector(".publish-el"),
     versionsEl = document.querySelector(".versions-el"),
     bookResults = document.querySelector("#book-results")
+    saveBtn = document.querySelector("save-btn")
 let bookWorks,
     bookDetails; //This variable is to allow for innerHTML Concatenation inside bookTile function
 
@@ -38,7 +39,7 @@ class BookTile {
     // Create variable for Book Tile
     static showDetails(title, author, publish, img, versions) {
         bookDetails = (`
-        <div class="col-lg-4 ms-auto me-auto">
+        <div class="col-lg-6 ms-auto me-auto p-2">
             <div class="d-flex">
                 <div class="img-el">${img}</div>
                 <div class="book-info p-3">
@@ -46,7 +47,7 @@ class BookTile {
                     <p class="author-el text-muted">${author}</p>
                     <p class="publish-el text-muted mt-5 mb-1">Published in: ${publish}</p>
                     <p class="versions-el text-muted">Versions: ${versions}</p>
-                    <button class="btn btn-lg btn-dark">Save</button>
+                    <button class="btn btn-pink save-btn">More Info</button>
                 </div>
             </div>
         </div>
@@ -56,7 +57,7 @@ class BookTile {
 }
 
 
-// Event Listener to listen for Search Button Click
+// Event Listener to search OpenLibrary API for a book
 searchBtn.addEventListener("click", async function() {
     // Initially creating an empty array
     let result = []
@@ -74,9 +75,9 @@ searchBtn.addEventListener("click", async function() {
         }
         // Store the Book Content valiues in variables
         try {   
-            let title = result.docs[0].title
-            let author = result.docs[0].author_name
-            let publish = result.docs[0].publish_year[0]
+            let title = result.docs[0].title,
+                author = result.docs[0].author_name,
+                publish = result.docs[0].publish_year[0];
             // Error Checks
             if (title == 'undefined' || author == 'undefined') {
                 alert("ERROR: Book cannot be found. Please try again.")
@@ -125,4 +126,10 @@ searchBtn.addEventListener("click", async function() {
         }
 })
 
+// Event Listener to Open new OpenLibrary tab with similar search results, as the user input
+bookResults.addEventListener("click", (event, target) => {
+    if ((event.target.classList.contains("save-btn"))) {
+        window.open(`https://openlibrary.org/search?q=${searchInput.value}`, '_blank')
+    }
+})
 
