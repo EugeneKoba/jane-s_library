@@ -59,11 +59,10 @@ h1 {
 }
 
 /* Navbar Elements take 100% of screen when screen size is smaller than 992px (lg) */
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
     
-    .navbar-brand {
-        width: 100%;
-        text-align: center;
+    .navbar-brand img {
+        width: 220px;
     }
 
     .navbar-nav {
