@@ -4,8 +4,8 @@ body {
     font-family: 'Montserrat', sans-serif !important;
 }
 
-.home-el, .blog-el {
-    background-color: #f2f1e7;
+.home-el, .publish-el, .blog-el {
+    background-color: #ededed;
 }
 
 h1 {
@@ -100,6 +100,22 @@ h1 {
 .blog-posts img:hover {
     transform: scale(1.05);
 }
+
+/* Publishers */
+
+.publish-el .publish-card .card-title {
+    color: #e558ac !important;
+}
+
+.publish-el .publish-card {
+    height: 250px;
+}
+
+.publish-el .publish-card img{
+    height: 100px;
+    cursor: pointer;
+}
+
 /*  Genres  */
 
 .genres-el h4 {
