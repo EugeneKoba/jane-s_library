@@ -8,8 +8,6 @@ Full Website Project for Jane's Library Instagram page, containing the following
 - Contact Us Page
 - Search Books Page.
 
-plus more. 
-
 Made with HTML, Bootstrap (CSS) & Vanilla Javascript.
 
 (Website Icons Created with Adobe Photoshop & Illustrator)
