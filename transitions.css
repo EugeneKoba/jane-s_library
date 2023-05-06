@@ -15,3 +15,18 @@
         transform: rotateX(0);
     }
 }
+
+
+
+/*  For IntersectionObserver Transitions sections where on-scroll transitions will occur  */
+
+.on-scroll {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 1.2s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0%);
+}

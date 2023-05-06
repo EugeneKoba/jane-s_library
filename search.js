@@ -45,7 +45,7 @@ class BookTile {
                 <div class="book-info p-3">
                     <h4 class="title-el">${title}</h4>
                     <p class="author-el text-muted">${author}</p>
-                    <p class="publish-el text-muted mt-5 mb-1">Published in: ${publish}</p>
+                    <p class="text-muted mt-5 mb-1">Published in: ${publish}</p>
                     <p class="versions-el text-muted">Versions: ${versions}</p>
                     <button class="btn btn-pink save-btn">More Info</button>
                 </div>
@@ -126,7 +126,7 @@ searchBtn.addEventListener("click", async function() {
         }
 })
 
-// Event Listener to Open new OpenLibrary tab with similar search results, as the user input
+// Event Listener to Open new OpenLibrary tab with user input search results
 bookResults.addEventListener("click", (event, target) => {
     if ((event.target.classList.contains("save-btn"))) {
         window.open(`https://openlibrary.org/search?q=${searchInput.value}`, '_blank')

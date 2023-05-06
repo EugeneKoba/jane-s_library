@@ -19,7 +19,7 @@ isbnEl = document.getElementById("isbn-el")
 submitBtn = document.getElementById("submit-btn")
 libraryList = document.getElementById("library-list")
 
-// let noOfBooks = 0 This indicates how many books are in the library
+
 let isBookInvalid = false,
     isAuthorInvalid = false,
     isIsbnInvalid = false,

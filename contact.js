@@ -12,8 +12,7 @@
 // Contact Section
 
 let formEl = document.getElementById("form-el")
-    firstName = document.getElementById("first-name"), 
-    lastName = document.getElementById("last-name"),
+    fullName = document.getElementById("full-name"), 
     messageEl = document.getElementById("message-el"),
     submitBtn = document.getElementById("submit-btn")
     btnLocation = document.getElementById("btn-location")
@@ -25,7 +24,7 @@ class ContactForm {
         submitBtn.setAttribute("class", "d-none")
         // Create a new Element with Bootstrap 'Loading...' Classes attached to it
         let btnLoading = document.createElement("div")
-        btnLoading.setAttribute("class", "btn btn-dark")
+        btnLoading.setAttribute("class", "btn btn-pink")
         btnLoading.innerHTML = `
             <span class="spinner-border spinner-border-sm"></span>
             Loading..`
@@ -37,10 +36,9 @@ class ContactForm {
             btnLoading.remove()
             // remove display-none class from Submit button, and replace it with standard button classes
             submitBtn.classList.remove("d-none")
-            submitBtn.setAttribute("class", "btn btn-dark")
+            submitBtn.setAttribute("class", "btn btn-pink")
             // Erase text from the form
-            firstName.value = ""
-            lastName.value = ""
+            fullName.value = ""
             messageEl.value = ""
             // Alert to show submission has been successful
             alert("Thank You! Your Feedback has been sent!")
