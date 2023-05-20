@@ -39,13 +39,13 @@ class BookTile {
     // Create variable for Book Tile
     static showDetails(title, author, publish, img, versions) {
         bookDetails = (`
-        <div class="col-lg-6 ms-auto me-auto p-2">
-            <div class="d-flex">
+        <div class="col-lg-6 ms-auto me-auto d-flex justify-content-center p-2">
+            <div class="search-container d-flex ms-auto me-auto">
                 <div class="img-el">${img}</div>
                 <div class="book-info p-3">
                     <h4 class="title-el">${title}</h4>
                     <p class="author-el text-muted">${author}</p>
-                    <p class="text-muted mt-5 mb-1">Published in: ${publish}</p>
+                    <p class="publish-date-el text-muted mb-1">Published in: ${publish}</p>
                     <p class="versions-el text-muted">Versions: ${versions}</p>
                     <button class="btn btn-pink save-btn">More Info</button>
                 </div>

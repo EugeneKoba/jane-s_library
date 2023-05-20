@@ -23,7 +23,6 @@ libraryList = document.getElementById("library-list")
 let isBookInvalid = false,
     isAuthorInvalid = false,
     isIsbnInvalid = false,
-    noOfBooks = 0,
     storedBooks,
     regExp;
 
@@ -43,12 +42,12 @@ class CreateBook {
     addBookToLibrary(book) {
         let row = document.createElement("tr")
         // fill the table row with the object elements
-        row.innerHTML = `<td>${book.bookTitle}</td><td>${book.author}</td><td>${book.isbn}</td><td>${book.dateAdded}</td><td><i class="bi bi-x delete-book"></i></td>`
+        row.innerHTML = `<td>${book.bookTitle}</td><td>${book.author}</td><td>${book.isbn}</td><td class="date">${book.dateAdded}</td><td><i class="bi bi-x delete-book"></i></td>`
         // append the table row to the original Library
         libraryList.appendChild(row)
     }
     // Function to Delete book from Library
-    deleteBook(event, target) {
+    deleteBook(event) {
         if (event.target.className.includes('delete-book')) {
             event.target.parentElement.parentElement.remove()
         }
@@ -126,12 +125,11 @@ class localStore {
     // Add Book to Book Array
     static addBook(book) {
         let storedBooks = localStore.getBooks()
-        noOfBooks++
         storedBooks.push(book)
         localStorage.setItem('storedBooks', JSON.stringify(storedBooks))
     }
 
-    static deleteBook(event, target) {
+    static deleteBook(event) {
         // Delete the First Row from Library
         let storedBooks = localStore.getBooks()
             if (event.target.className.includes('delete-book')) {
@@ -185,9 +183,9 @@ submitBtn.addEventListener("click", event => {
 })
 
 // Event Listener for Deleting Book from Library
-libraryList.addEventListener("click", (event, target) => {
-    createBook.deleteBook(event, target)
-    localStore.deleteBook(event, target)
+libraryList.addEventListener("click", (event) => {
+    createBook.deleteBook(event)
+    localStore.deleteBook(event)
     event.preventDefault() // Stop form from auto-firing
 })
 

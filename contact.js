@@ -37,11 +37,16 @@ class ContactForm {
             // remove display-none class from Submit button, and replace it with standard button classes
             submitBtn.classList.remove("d-none")
             submitBtn.setAttribute("class", "btn btn-pink")
+            if (!fullName.value || !messageEl.value) {
+                // Alert to show submission has not been successful
+                alert("ERROR: Please type in a valid name & message.")
+            } else {
+                // Alert to show submission has been successful
+                alert("Thank You, your Feedback has been sent!")
+            }
             // Erase text from the form
             fullName.value = ""
             messageEl.value = ""
-            // Alert to show submission has been successful
-            alert("Thank You! Your Feedback has been sent!")
         }, 1500)
     }
 }

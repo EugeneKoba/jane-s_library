@@ -1,7 +1,7 @@
 /* Sections where opening transitions will occur */
 
 .home-el, .about-el, .publish-el, .genres-el, .blog-el, .blog, .library-el, .contact-el, .search-el {
-    animation: transitionIn 0.8s;
+    animation: transitionIn 1.2s;
 }
 
 @keyframes transitionIn {

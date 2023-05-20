@@ -15,17 +15,15 @@
 
 const onScroll = document.querySelectorAll(".on-scroll")
 
-console.log(onScroll)
-
 // This function will run whenever the visibility of each element changes
 const observer = new IntersectionObserver((i) => {
     i.forEach((item) => {
         if (item.isIntersecting) {
             item.target.classList.add('show')
         }
-        else {
-            item.target.classList.remove('show')
-        }
+        // else {
+        //     item.target.classList.remove('show')
+        // }
     })
 })
 

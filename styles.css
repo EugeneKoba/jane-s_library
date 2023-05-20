@@ -1,6 +1,8 @@
 /* General */
 
 body {
+    width: 100vw;
+    min-height: 100vh;
     font-family: 'Montserrat', sans-serif !important;
 }
 
@@ -83,14 +85,15 @@ h1 {
 
 /* Home */
 
-.square-shape {
+/* .square-shape {
     width: 30px;
     height: 30px;
+    background-color: #e558ac;
     border: 3px solid #e558ac;
     top: 19%;
     right: 14%;
     animation: my-rotate 4s linear infinite;
-}
+} */
 
 @keyframes my-rotate {
     0% {
@@ -206,10 +209,38 @@ h1 {
     color: #f1a5d2;
 }
 
+@media screen and (min-width: 1410px) {
+    .blog .para-one {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .blog .grey-shape {
+        height: 562px;
+    }
+}
+
 /* *********   Library Page   ********* */
 
 .library-el {
     min-height: 100vh;
+}
+
+.library-desc {
+    font-weight: 600;
+}
+
+@media screen and (max-width: 660px) {
+    .library-el .table {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .library-el .date {
+        display: none;
+    }
 }
 
 /* *********   Contact Page   ********* */
@@ -230,6 +261,19 @@ h1 {
 
 #book-results .img-el img {
     min-height: 300px;
+}
+
+#book-results .search-container .publish-date-el {
+    margin-top: 48px;
+}
+
+@media screen and (max-width: 500px) {
+    #book-results .search-container {
+        flex-direction: column;
+    }
+    #book-results .search-container .publish-date-el {
+        margin-top: 0;
+    }
 }
 
 /* Footer */
