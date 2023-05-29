@@ -2,9 +2,11 @@
 
 A website that I built for Jane Goodall, a UK Poet. Constructed with Vanilla Javascript, containing OpenLibrary API, Local Storage, ES6 Classes, RegEx & custom styled components with Bootstrap 5.
 
+<img width="1680" alt="Screenshot 2023-05-06 at 12 38 56" src="https://user-images.githubusercontent.com/120111293/236621861-d2079ebc-adb3-4514-80ca-5f0bb1b8a4ad.png">
+
 ## Lessons I Learned
 
-This was my first Bootstrap 5 project, beforehand I had completed several mini-projects. I enjoyed the teaching process of Bootstrap 5 & engoyed the process of building a full Bootstrap 5 Website. I was able to get feedback from Senior developers about my code, and have several improvement points that I can partake on! 
+This was my first Bootstrap 5 project, beforehand I had completed several mini-projects. I enjoyed the teaching process of Bootstrap 5 & engoyed the process of building a full Bootstrap 5 Website. I was able to get feedback from a Senior developer about my code, and have several improvement points that I can partake on. 
 
 I really had to learn how to manoeuvre around with Bootstrap, and customise default elements well. With several searches on StackOverflow, I was able to get around some queries I had, & I learned how to style form elements correctly. 
 
@@ -19,7 +21,9 @@ Here are a list of future additions I could potentially add to the website in th
 
 ## Web Deployment
 
-Website deployed with [Github Pages](https://pages.github.com/).
+This website deployed with [github pages](https://pages.github.com/).
+
+# Tutorial
 
 ## Get Started
 
@@ -71,5 +75,3 @@ Made with HTML, Bootstrap (CSS) & Vanilla Javascript. Website Icons Created with
 <img width="1680" alt="Screenshot 2023-04-26 at 17 30 40" src="https://user-images.githubusercontent.com/120111293/234642110-87a37eb3-13d1-4d06-8cf5-932e3ba2122a.png">
 
 <img width="1680" alt="Screenshot 2023-04-26 at 17 30 57" src="https://user-images.githubusercontent.com/120111293/234642086-6a6f5ca6-7dd6-4efb-834c-513fda5e7833.png">
-
-Made with HTML, Bootstrap (CSS) & Vanilla Javascript. Website Icons Created with Adobe Photoshop & Illustrator.
